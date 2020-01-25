@@ -1,56 +1,52 @@
-const path = require('path');
-const htmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack')
+const path = require('path')
+const HtmlWebPackPlugin = require('html-webpack-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+
 
 module.exports = {
-
-    // 합칠 파일
-    entry: [
-        './src/client/index.js',
-        ],
-
-    // 합친 파일 출력
+    mode: 'development',
+    entry: {
+        main: './src/client/index.js'
+    },
     output: {
-        path: path.join(__dirname, './dist/'),
-        filename: 'bundle.js'
+        filename: '[name].js',
+        path: path.resolve('./dist')
+    },
+    devServer: {
+        overlay: true,
+        stats: 'errors-only',
+        port: 3001,
+        hot: true
     },
 
-    // 어느모듈에 적용할 것 인지
     module: {
         rules: [
-            {
+            {   
                 test: /\.(js|jsx)$/,
-                exclude: /node_modules/,
-                use: {
-                    loader: 'babel-loader',
-                },
+                loader: 'babel-loader',
+                exclude: /node_modules/
             },
-
             {
-                test: /\.html$/,
-                use: [
-                    {
-                        loader: 'html-loader',
-                        options: { minimize: true }
-                    }
-                ]
-            },
-
+                test: /\.(scss|css)$/,
+                use: ['style-loader', 'css-loader', 'sass-loader']
+            }
         ]
     },
 
-    devServer: {
-        contentBase: './dist',
-        hot: true, // HMR 기능 활성화
-        open: true,
-        host: 'localhost',
-        port: 3000
-    },
-
     plugins: [
-        new htmlWebpackPlugin({
-            template: path.join(__dirname, './public/index.html'),
-            filename: path.join(__dirname, './dist/index.html')
-        })
-    ]
+        new webpack.BannerPlugin({
+            banner: `Build: ${new Date().toLocaleDateString()}`
+        }),
 
-}
+        new HtmlWebPackPlugin({
+            template: './src/client/index.html',
+        }),
+
+        new CleanWebpackPlugin(),
+    ],
+
+    optimization: {
+
+    },
+};
