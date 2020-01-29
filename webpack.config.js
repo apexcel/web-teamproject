@@ -47,4 +47,8 @@ module.exports = {
     optimization: {
 
     },
+
+    // externals: {
+    //     axios: 'axios'
+    // }
 }

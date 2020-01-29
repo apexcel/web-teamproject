@@ -10,11 +10,14 @@ const port = process.env.port || 4000
 const router = require('./router.js')
 const axios = require('axios')
 
-app.use(express.static(path.join(__dirname, '..', 'public/')))
+app.use(express.static(path.join(__dirname, '..', 'dist/')))
 app.use(cors())
 
 app.use('/', router)
 app.use('/user', router)
+app.get('*', (req, res) => {
+    res.sendfile(path.resolve(__dirname, '..', 'dist/', 'index.html'))
+})
 app.use(express.json())
 
 server.listen(port, () => {

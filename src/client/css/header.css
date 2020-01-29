@@ -1,0 +1,24 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.header-menu {
+    border: 1px solid red;
+}
+
+ul {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+}
+
+li {
+    display: block;
+    padding: 1rem;
+}
+
+.link {
+    text-decoration: none;
+    font-size: 1.3rem;
+}

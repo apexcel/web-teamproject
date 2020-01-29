@@ -17,7 +17,8 @@ module.exports = {
         overlay: true,
         stats: 'errors-only',
         port: 3001,
-        hot: true
+        hot: true,
+        historyApiFallback: true,
     },
 
     module: {
