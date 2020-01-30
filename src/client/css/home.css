@@ -1,0 +1,13 @@
+.home-container {
+    background-image: url('../imgs/network3.jpg');
+    width: 0 auto;
+    height: 95vh;
+    margin: 1rem;
+}
+
+.section-container {
+}
+
+.section-container h1, h2, h3, h4, h5, h6 {
+    font-size: 4rem;
+}

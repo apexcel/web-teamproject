@@ -28,6 +28,14 @@ module.exports = {
             {
                 test: /\.html$/,
                 use: 'html-loader'
+            },
+            {
+                test: /\.(png|jpg|svg|gif)$/,
+                loader: 'file-loader',
+                options: {
+                    publicPath: '/dist/',
+                    name: '[name].[ext]?[hash]'
+                }
             }
         ]
     },

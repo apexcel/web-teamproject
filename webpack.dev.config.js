@@ -31,6 +31,20 @@ module.exports = {
             {
                 test: /\.(scss|css)$/,
                 use: ['style-loader', 'css-loader', 'sass-loader']
+            },
+            {
+                test: /\.html$/,
+                use: 'html-loader'
+            },
+            {
+                test: /\.(png|jpg|svg|gif)$/,
+                loader: 'file-loader',
+                exclude: /node_modules/,
+                options: {
+                    publicPath: '/src/client/imgs',
+                    outputPath: '/dist/',
+                    name: '[name].[ext]?[hash]'
+                }
             }
         ]
     },
