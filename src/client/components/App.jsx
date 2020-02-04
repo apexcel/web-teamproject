@@ -4,6 +4,7 @@ import { Route, Switch } from 'react-router-dom'
 import Header from './Header.jsx'
 import { Home, About } from '../pages'
 
+import '../css/layout.css'
 import '../css/app.css'
 
 const App = () => {
@@ -51,11 +52,13 @@ return(
                     {md}
                     {data}
                     <button onClick={getRoot}>getroot</button> */}
-                    <Switch>
+                    {/* <Switch>
                         <Route exact path='/' component={Home}/>
                         <Route path='/about' component={About} />
                         <Route path='/contact' />
-                    </Switch>
+                    </Switch> */}
+                    <Home />
+                    <About />
                 </div>
         </div>
     )

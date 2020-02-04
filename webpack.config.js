@@ -30,7 +30,7 @@ module.exports = {
                 use: 'html-loader'
             },
             {
-                test: /\.(png|jpg|svg|gif)$/,
+                test: /\.(png|jpg|svg|gif|eot|otf|ttf|woff)$/,
                 loader: 'file-loader',
                 options: {
                     publicPath: '/dist/',

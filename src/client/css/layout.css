@@ -1,0 +1,32 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+*::selection {
+    background: transparent;
+}
+
+.container {
+    width: 0 auto;
+    height: 100vh;
+}
+
+.section-container {
+    padding: 5rem;
+    height: inherit;
+}
+
+.font-fat-face {
+    font-family: 'Abril Fatface', cursive;
+    font-size: 5rem;
+}
+
+.font-damion {
+    font-family: 'Damion', cursive;
+}
+
+.font-baskerville {
+    font-family: 'Libre Baskerville', cursive;
+}

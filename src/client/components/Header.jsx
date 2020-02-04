@@ -5,18 +5,25 @@ import '../css/header.css'
 
 const Header = () => {
     return(
-        <header className='header-menu'>
-            <ul>
-                <li>
-                    <Link className='link' to='/'>Home</Link>
-                </li>
-                <li>
-                    <Link className='link' to='/about'>About</Link>
-                </li>
-                <li>
-                    <Link className='link' to='/contact'>Contact</Link>
-                </li>
-            </ul>
+        <header className='font-baskerville'>
+            <div className='header-menu'>
+                <ul>
+                    <li className='float-left'>
+                    <a className='link' href='/'>DBNET</a>
+                    </li>
+                </ul>
+                <ul className='float-right'>
+                    <li>
+                        <a className='link' href='#about-container'>Work</a>
+                    </li>
+                    <li>
+                        <a className='link' href='#about-container'>About</a>
+                    </li>
+                    <li>
+                        <a className='link' href='#about-container'>Contacts</a>
+                    </li>
+                </ul>
+            </div>
         </header>
     )
 }
