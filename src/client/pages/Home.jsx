@@ -1,23 +1,20 @@
 import React from 'react'
 
-import '../css/home.css'
-
-import img1 from '../imgs/laptop-keyboard.jpg'
+import '../css/home.scss'
 
 const Home = () => {
     return(
-        <div className='container'>
             <section className='section-container'>
-                <article className='article-container home-center'>
+                <div className='home-center'>
                     <div className='home-index'>
-                        <div className='home-text font-baskerville'>
+                        <div className='home-text'>
                             <div className='bold'>D</div>
                             <div className='bold'>B</div>
                             <div className='bold'>N</div>
                             <div className='bold'>E</div>
                             <div className='bold'>T</div>
                         </div>
-                        <div className='home-text font-baskerville'>
+                        <div className='home-text'>
                             <div className='small'>d</div>
                             <div className='small'>a</div>
                             <div className='small'>t</div>
@@ -36,9 +33,8 @@ const Home = () => {
                             <div className='small'>k</div>
                         </div>
                     </div>
-                </article>
+                </div>
             </section>
-        </div>
     )
 }
 

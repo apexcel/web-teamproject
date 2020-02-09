@@ -1,0 +1,77 @@
+$colors: ('basis-color': #000000, 'hover-color': #887628);
+$main-font: 'Playfair Display', serif;
+
+.about-index {
+    font-family: $main-font;
+    font-size: 4em;
+    font-weight: lighter;
+}
+
+.item-container {
+    width: 100%;
+    min-width: 500px;
+    height: 90%;
+    display: flex;
+    flex-direction: row;
+    border: 1px solid black;
+}
+
+.img-box {
+    flex: 1;
+    height: 100%;
+    border: 1px solid red;
+}
+
+.img-text {
+
+}
+
+.items {
+    display: flex;
+    flex: 3;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100%;
+    border: 1px solid blue;
+}
+
+.item-selector {
+    display: block;
+    font-family: $main-font;
+    font-size: 3em;
+    margin-left: 33%;
+}
+
+.item-selector:hover {
+    color: map-get($colors, hover-color);
+    cursor: pointer;
+}
+
+.visible {
+    visibility: visible;
+}
+
+.invisible {
+    animation-name: on-visible;
+    animation-fill-mode: forwards;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    flex: 0 0;
+}
+
+.item {
+    display: block;
+}
+
+@keyframes on-visible {
+    from {
+        opacity: 1;
+    }
+    to {
+        flex: 0 0;
+        opacity: 0;
+        display: none;
+        visibility: hidden;
+    }
+}

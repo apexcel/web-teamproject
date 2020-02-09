@@ -1,20 +1,12 @@
-.section-container {
-    border: 1px solid green;
-
-}
-
-.home-index {
-    width: 35%;
-    pointer-events: none;
-}
-
 .home-center {
     display: flex;
     flex-basis: 1;
     height: 100%;
+    width: 100%;
     align-items: center;
     flex-direction: row;
     justify-content: center;
+    font-family: 'Libre Baskerville', cursive;
 }
 
 .home-text {
@@ -28,6 +20,6 @@
 }
 
 .small {
-    font-size: 0.8rem;
+    font-size: 1rem;
     color: #887628;
 }
