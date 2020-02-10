@@ -1,0 +1,25 @@
+$colors: ('bg-color': #000000, 'font-color': #887628);
+
+
+footer {
+    display: block;
+    position: absolute;
+    background: map-get($colors, bg-color);
+    color: map-get($colors, font-color);
+    font-size: 2em;
+    font-family: 'Libre Baskerville', cursive;
+    padding: 4em;
+    width: 100%;
+    height: 80vh;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: row;
+    border: 1px solid red;
+    width: 100%;
+}
+
+.footer-item {
+    border: 1px solid blue;
+}

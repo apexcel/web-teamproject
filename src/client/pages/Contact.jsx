@@ -7,13 +7,11 @@ const Contact = () => {
     })
 
     return(
-        <div className='container'>
             <section className='section-container'>
                 <article className='article-container'>
                     <h1>Contact</h1>
                 </article>
             </section>
-        </div>
     )
 }
 

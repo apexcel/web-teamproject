@@ -8,18 +8,20 @@ $main-font: 'Playfair Display', serif;
 }
 
 .item-container {
-    width: 100%;
-    min-width: 500px;
     height: 90%;
+    width: 100%;
     display: flex;
     flex-direction: row;
-    border: 1px solid black;
+    border: 3px solid green;
 }
 
 .img-box {
     flex: 1;
+    flex-basis: 200px;
+    flex-shrink: 0;
+    flex-grow: 0;
     height: 100%;
-    border: 1px solid red;
+    border: 3px solid red;
 }
 
 .img-text {
@@ -33,14 +35,17 @@ $main-font: 'Playfair Display', serif;
     justify-content: center;
     align-items: flex-start;
     height: 100%;
-    border: 1px solid blue;
+    flex-basis: 450px;
+    flex-shrink: 1;
+    flex-grow: 1;
+    border: 3px solid goldenrod;
 }
 
 .item-selector {
     display: block;
     font-family: $main-font;
     font-size: 3em;
-    margin-left: 33%;
+    margin-left: 20%;
 }
 
 .item-selector:hover {
@@ -48,30 +53,33 @@ $main-font: 'Playfair Display', serif;
     cursor: pointer;
 }
 
-.visible {
-    visibility: visible;
+.hide {
+    visibility: hidden;
+    display: none;
+    opacity: 0;
 }
 
-.invisible {
-    animation-name: on-visible;
+.active {
+    animation-name: onVisible;
     animation-fill-mode: forwards;
     animation-duration: 1s;
-    animation-timing-function: linear;
-    flex: 0 0;
+    animation-timing-function: ease-in-out;
 }
 
-.item {
-    display: block;
+.sub-items {
+    visibility: hidden;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    border: 3px solid black;
 }
 
-@keyframes on-visible {
+@keyframes onVisible {
     from {
-        opacity: 1;
+        opacity: 0;
     }
     to {
-        flex: 0 0;
-        opacity: 0;
-        display: none;
-        visibility: hidden;
+        opacity: 1;
+        visibility: visible;
     }
 }

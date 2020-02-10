@@ -2,24 +2,26 @@ import React, { useState, useEffect } from 'react'
 import { Route, Switch } from 'react-router-dom'
 
 import Header from './Header.jsx'
+import MHeader from './MHeader.jsx'
+import Footer from './Footer.jsx'
 import { Home, About, Contact } from '../pages'
 
 import '../css/layout.scss'
 import '../css/app.css'
-import MHeader from './MHeader.jsx'
+
 
 const App = () => {
     const [data, setData] = useState('')
     const [user, setUser] = useState([])
     const [lastUser, setLastUser] = useState('')
-    const [windowSize, setWindowSize] = useState(769);
+    const [windowSize, setWindowSize] = useState(1024);
     const [itemShow, setItemShow] = useState(true);
 
     useEffect ( () => {
         window.addEventListener('resize', resize)
 
         const isShow = () => {
-            if (windowSize > 768) {
+            if (windowSize > 769) {
                 setItemShow(true)
             }
             else {
@@ -94,6 +96,7 @@ return(
                     <Home />
                     <About />
                     <Contact />
+                    <Footer />
                 </div>
         </div>
     )
