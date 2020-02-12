@@ -14,18 +14,20 @@ const App = () => {
     const [data, setData] = useState('')
     const [user, setUser] = useState([])
     const [lastUser, setLastUser] = useState('')
-    const [windowSize, setWindowSize] = useState(1024);
+    const [windowSize, setWindowSize] = useState();
     const [itemShow, setItemShow] = useState(true);
 
     useEffect ( () => {
         window.addEventListener('resize', resize)
 
         const isShow = () => {
-            if (windowSize > 769) {
-                setItemShow(true)
-            }
-            else {
-                setItemShow(false)
+            if (!isEmpty(windowSize)) {
+                if (windowSize > 769) {
+                    setItemShow(true)
+                }
+                else {
+                    setItemShow(false)
+                }
             }
         }
         isShow()
@@ -46,8 +48,17 @@ const App = () => {
         width: `${windowSize}`
     })
 
+    const isEmpty = (value) => { // 배열이나 객체가 비어 있으면 true, 값이 있으면 false
+        if (value === '' || value === null || value === undefined ||(value !== null && typeof value === 'object' && !Object.keys(value).length)) {
+            return true
+        }
+        else {
+            return false
+        }
+    }
 
     console.log(itemShow)
+    console.log(windowSize)
 /*
     useEffect( () => {
         

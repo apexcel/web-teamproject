@@ -3,7 +3,7 @@ $main-font: 'Playfair Display', serif;
 
 .about-index {
     font-family: $main-font;
-    font-size: 4em;
+    font-size: 4rem;
     font-weight: lighter;
 }
 
@@ -15,37 +15,36 @@ $main-font: 'Playfair Display', serif;
     border: 3px solid green;
 }
 
-.img-box {
-    flex: 1;
-    flex-basis: 200px;
-    flex-shrink: 0;
-    flex-grow: 0;
+.left{
+    width: 35%;
     height: 100%;
     border: 3px solid red;
 }
 
-.img-text {
-
+.right {
+    width: 75%;
+    height: 100%;
+    border: 3px solid red;
 }
 
 .items {
     display: flex;
-    flex: 3;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
     height: 100%;
-    flex-basis: 450px;
     flex-shrink: 1;
     flex-grow: 1;
     border: 3px solid goldenrod;
+    margin: 0 15% 0 15%;
 }
 
 .item-selector {
     display: block;
     font-family: $main-font;
-    font-size: 3em;
-    margin-left: 20%;
+    font-size: 3rem;
+    width: 100%;
+    padding: 0;
 }
 
 .item-selector:hover {
@@ -72,6 +71,41 @@ $main-font: 'Playfair Display', serif;
     width: 100%;
     opacity: 0;
     border: 3px solid black;
+}
+
+.sub-content {
+    position: relative;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: baseline;
+    margin: 0 15% 0 15%;
+}
+
+.cancel-btn {
+    display: flex;
+    position: absolute;
+    height: 35px;
+    width: 35px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.cancel-btn span {
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: black;
+}
+
+.cancel-btn span:nth-child(1) {
+    transform: rotate(45deg);
+}
+
+.cancel-btn span:nth-child(2) {
+    transform: rotate(-45deg);
 }
 
 @keyframes onVisible {

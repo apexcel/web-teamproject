@@ -6,12 +6,14 @@ import '../css/header.scss'
 const Header = () => {
 
     return(
-        <header>
-            <div className='header-menu'>
-                <a className='float-left link' href='/'>DBNET</a>
-                <a className='float-right link' href='#about-container'>Work</a>
-                <a className='float-right link' href='#about-container'>About</a>
-                <a className='float-right link' href='#about-container'>Contacts</a>
+        <header className='header' role='banner'>
+            <div className='header-wrapper'>
+                <h1 className='header-heading'><a className='header-title' href='/'>D</a></h1>
+                <div className='header-menu'>
+                    <a className='link' href='#about-container'>Works</a>
+                    <a className='link' href='#about-container'>About</a>
+                    <a className='link' href='#about-container'>Contacts</a>
+                </div>
             </div>
         </header>
     )

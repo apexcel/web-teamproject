@@ -2,16 +2,20 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    vertical-align: baseline;
 }
 
 *::selection {
     background: transparent;
 }
 
+body {
+}
+
 $tablet-brp: 768px;
 $laptop-brp: 1024px;
 
-
+// Mobile
 @media only screen and (max-width: 768px) {
     .container {
         min-width: 320px;
@@ -23,11 +27,8 @@ $laptop-brp: 1024px;
         width: 300px;
     }
 
-    //about
-
-    .about-section-container {
-        border: 1px solid blue;
-        height: inherit;
+    .home-text .small {
+        font-size: 0.7rem;
     }
 
     .item-container {
@@ -35,15 +36,22 @@ $laptop-brp: 1024px;
         width: auto 0;
     }
 
-    .img-box {
+    .item-container .left {
         display: none;
+        visibility: hidden;
     }
 
-    .sub-items {
-        display: none;
+    .item-container .right {
+        width: 100%;
+    }
+
+    .item-selector {
+        font-size: 2rem;
+        padding: 10% 25% 10% 25%;
     }
 }
 
+// Tablet
 @media only screen and (min-width: 768px) {
     .container {
         width: 0 auto;
@@ -54,14 +62,17 @@ $laptop-brp: 1024px;
         width: 400px;
     }
 
-    .about-section-container {
-        padding: 5rem;
-        border: 1px solid blue;
-        height: inherit;
+    .home-text {
+        font-size: 1.8rem;
     }
 }
 
+// Laptop
 @media only screen and (min-width: 1024px) {
+    body {
+        font-size: 1.2rem;
+    }
+
     .container {
         width: 0 auto;
         height: 100vh;
@@ -71,10 +82,27 @@ $laptop-brp: 1024px;
         width: 600px;
     }
 
-    .about-section-container {
-        padding: 5rem;
-        border: 1px solid blue;
-        height: inherit;
+    .home-text {
+        font-size: 2rem;
+    }
+}
+
+// Desktop
+@media only screen and (min-width: 1980px) {
+    body {
+        font-size: 2.5rem;
+    }
+
+    .home-index {
+        width: 40%;
+    }
+
+    .home-text {
+        font-size: 3.5rem;
+    }
+
+    .home-text .small {
+        font-size: 1.8rem;
     }
 }
 
@@ -85,7 +113,7 @@ $laptop-brp: 1024px;
 }
 
 .section-container {
-    padding: 5rem;
+    padding: 2rem;
     border: 1px solid blue;
     height: inherit;
 }

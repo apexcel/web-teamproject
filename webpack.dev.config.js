@@ -34,7 +34,7 @@ module.exports = {
             },
             {
                 test: /\.html$/,
-                use: 'html-loader'
+                loader: 'html-loader'
             },
             {
                 test: /\.(png|jpg|svg|gif|eot|otf|ttf|woff)$/,
@@ -55,6 +55,7 @@ module.exports = {
         }),
 
         new HtmlWebPackPlugin({
+            title: 'DBNET',
             template: './src/client/index.html',
         }),
 

@@ -9,15 +9,6 @@ const Footer = () => {
                 <div className='footer-item'>
                     <p>Section</p>
                 </div>
-                <div className='footer-item'>
-                    <p>Section</p>
-                </div>
-                <div className='footer-item'>
-                    <p>Section</p>
-                </div>
-                <div className='footer-item'>
-                    <p>Section</p>
-                </div>
             </div>
         </footer>
     )
