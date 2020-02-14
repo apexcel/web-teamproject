@@ -105,7 +105,7 @@ return(
                     </Switch>
                     */}
                     <Home />
-                    <About />
+                    <About isEmpty={isEmpty} />
                     <Contact />
                     <Footer />
                 </div>

@@ -113,12 +113,12 @@ $laptop-brp: 1024px;
 }
 
 .section-container {
+    height: 100%;
     padding: 2rem;
     border: 1px solid blue;
     height: inherit;
 }
 
 .contents {
-    border: 1px solid black;
     height: 100%;
 }

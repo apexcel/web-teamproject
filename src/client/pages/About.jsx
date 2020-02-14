@@ -2,52 +2,68 @@ import React, { useState, useEffect, createRef } from 'react'
 
 import '../css/about.scss'
 
-const About = () => {
+const About = ({isEmpty}) => {
 
-    const [active, setActive] = useState(true);
+    const [active, setActive] = useState(true)
+    const [hover, setHover] = useState()
+    const [titles, setTitles] = useState()
 
     useEffect( () => {
-        
+        if (!isEmpty(hover)) {
+            switch (hover) {
+                case 'Intro':
+                    console.log('Intro')
+                    setTitles('intro')
+                    break;
+                case 'Works':
+                    console.log('Works')
+                    setTitles('works')
+                    break;
+                case 'Activities':
+                    console.log('Activities')
+                    setTitles('activities')
+                    break;
+                case 'Members':
+                    console.log('Members')
+                    setTitles('members')
+                    break;
+            }
+        }
+        else {
+            console.log('empty')
+        }
     })
 
     const isActive = (e) => {
         e.preventDefault()
         setActive(!active)
-        console.log(active)
-        console.log(e.target.style)
-        console.log(e.target)
-        console.log(e.target.innerHTML)
-        if (e.target.innerHTML === 'Intro') {
-            console.log('this title is intro')
-        }
+        setHover()
+    }
+
+    const isHover = (e) => {
+        setHover(e.target.innerHTML)
+    }
+
+    const notHover = (e) => {
+        setHover()
+        setTitles()
     }
 
     return(
             <section className='section-container'>
                 <h1 className='about-index'>About</h1>
-                <div className='item-container'>
-                    <div className='left'>
-                        <span className='img-text'>Test Text</span>
-                    </div>
-                    <div className='right'>
-                        <div className={`items ${active ? 'hide' : 'active'}`}>
-                            <span>Index</span>
-                            <span onClick={isActive} className='item-selector'>Intro</span>
-                            <span className='item-selector'>Works</span>
-                            <span className='item-selector'>Activities</span>
-                            <span className='item-selector'>Members</span>
+                <div className='about-wrapper'>
+                    <div className={`about-items ${titles}`}>
+                        <div className={`items-wrapper ${active ? 'active' : 'hide'}`}>
+                            <span className='selector-index'>contents</span>
+                            <span onClick={isActive} onMouseOver={isHover} onMouseOut={notHover} className='item-selector'>Intro</span>
+                            <span onClick={isActive} onMouseOver={isHover} onMouseOut={notHover} className='item-selector'>Works</span>
+                            <span onClick={isActive} onMouseOver={isHover} onMouseOut={notHover} className='item-selector'>Activities</span>
+                            <span onClick={isActive} onMouseOver={isHover} onMouseOut={notHover} className='item-selector'>Members</span>
                         </div>
-                        <div className={`sub-items ${active ? 'active' : 'hide'}`}>
-                            <div className='cancel-btn' onClick={isActive}>
-                                <span></span>
-                                <span></span>
-                            </div>
-                            <div className='sub-content'>
-                                <h2>Intro</h2>
-                                <p>
-                                    한신대학교 교내 데이터베이스와 네트워크를 연구하는 연구실입니다.
-                                    주로 같은 분야를 다루는 학우들 끼리 스터디를 하며 후배들의 학습을 돕습니다.
-                                </p>
+                        <div className={`sub-contents ${active ? 'hide' : 'active'}`}>
+                            <div className='sub-item'>
+                            <div className='cancel' onClick={isActive}></div>
                             </div>
                         </div>
                     </div>
