@@ -7,7 +7,10 @@ const Footer = () => {
         <footer>
             <div className='footer-container'>
                 <div className='footer-item'>
-                    <p>Section</p>
+                <span>ss</span>
+                </div>
+                <div className='footer-item'>
+                    <span className='cr'>©OOGiE826</span>
                 </div>
             </div>
         </footer>

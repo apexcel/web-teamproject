@@ -6,6 +6,7 @@ const About = ({isEmpty}) => {
 
     const [active, setActive] = useState(true)
     const [hover, setHover] = useState()
+    const [hovering, setHovering] = useState(false)
     const [titles, setTitles] = useState()
 
     useEffect( () => {
@@ -42,16 +43,18 @@ const About = ({isEmpty}) => {
 
     const isHover = (e) => {
         setHover(e.target.innerHTML)
+        setHovering(true)
     }
 
     const notHover = (e) => {
         setHover()
+        setHovering(false)
         setTitles()
     }
 
     return(
             <section className='section-container'>
-                <h1 className='about-index'>About</h1>
+                <h1 className={`about-index ${hovering ? 'invert' : ''}`}>About</h1>
                 <div className='about-wrapper'>
                     <div className={`about-items ${titles}`}>
                         <div className={`items-wrapper ${active ? 'active' : 'hide'}`}>

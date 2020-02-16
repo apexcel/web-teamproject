@@ -1,24 +1,32 @@
 $colors: ('basis-color': #000000, 'hover-color': #887628);
+$current-color: currentColor;
+@function text-color($color) {
+    @if (lightness($color) > 50) {
+      @return #000000; // Lighter background, return dark color
+    } @else {
+      @return #ffffff; // Darker background, return light color
+    }
+}
 
 .header {
+    z-index: 999;
     display: block;
     position: fixed;
-    top: 0;
-    left: 0;
     width: 100%;
-    color: #fff;
+    overflow: hidden;
     padding: 3rem 0 3rem 0;
     mix-blend-mode: difference;
-    z-index: 999;
+    pointer-events: none;
 }
 
 .header-wrapper {
     display: flex;
+    position: relative;
     align-items: baseline;    
     flex-direction: row;
     height: auto;
     padding: 0 3rem 0 3rem;
-    color: #000;
+    z-index: 1;
 
     .header-heading {
         flex: none;
@@ -26,8 +34,7 @@ $colors: ('basis-color': #000000, 'hover-color': #887628);
 
         .header-title {
             font-size: 1.8rem;
-            text-decoration: none;
-            color: #fff;
+            pointer-events: auto;
         }   
     }
 
@@ -39,20 +46,15 @@ $colors: ('basis-color': #000000, 'hover-color': #887628);
 
         .link {
             margin: 2em;
-            text-decoration: none;
-
+            transition: color 0.5s ease;
+            pointer-events: auto;
+            
             &:hover {
                 color: map-get($colors, hover-color);
                 text-decoration: line-through;
                 transition: ease;
                 transition-duration: 0.5s;
             }
-
         }
     }
-}
-
-a {
-    color: #000;
-    text-decoration: none;
 }
