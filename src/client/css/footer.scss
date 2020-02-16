@@ -1,19 +1,24 @@
+%flex-center-align {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 footer {
     position: absolute;
     background: #fff;
     color: #000;
-    font-size: 1.2rem;
     width: 100%;
     height: auto;
-    padding: 50px;
-    border: 3px solid red;
+    padding: 50px 50px 100px 50px;
 
     .footer-title {
         position: relative;
-        border: 1px solid gray;
         display: inline-block;
         font-family: 'Libre Baskerville', cursive;
         width: 100%;
+        font-size: 1.4rem;
+        padding-bottom: 1rem;
         height: auto;
     }
 
@@ -24,13 +29,12 @@ footer {
         font-family: 'Open Sans', serif;
         width: 100%;
         height: auto;
-        border: 1px solid red;
         font-size: 0.9rem;
 
         .footer-item {
-            border: 1px solid blue;
-            & span {
-                padding: 1px;
+
+            .f-link, .right-item span {
+                margin: 3px 3px 3px 0;
             }
         }
 
@@ -40,18 +44,65 @@ footer {
             .left-item {
                 display: flex;
                 flex-direction: column;
+
+                .f-link {
+
+                    &:hover {
+                        color: rgb(151, 151, 151);
+                    }
+                }
+            }
+        }
+
+        .mid {
+
+            .mid-item {
+                display: flex;
+                flex-direction: column;
+
+                & span {
+                    margin: 3px 3px 3px 0;
+                }
             }
         }
 
         .right {
+            margin-left: auto;
+            @extend %flex-center-align;
+
+            &:hover {
+                opacity: 0.5;
+            }
 
             .right-item {
-                display: flex;
-                flex-direction: column;
+                position: relative;
+                right: 0;
+                width: 50px;
+                height: 50px;
+                border-top: 1px solid black;
+                @extend %flex-center-align;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    width: 15px;
+                    height: 15px;
+                    border-top: 1px solid #000;
+                    border-left: 1px solid #000;
+                    transform: rotate(45deg);
+                }
+                
+                &::after {
+                    content: '';
+                    position: absolute;
+                    width: 32px;
+                    height: 32px;
+                    border-top: 1px solid #000;
+                    border-left: 1px solid #000;
+                    transform: rotate(45deg);
+                }
             }
         }
-
-
     }
 }
 
