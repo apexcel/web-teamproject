@@ -5,5 +5,4 @@ import Img3 from './bg3.jpg'
 export default [
     Img1,
     Img2,
-    Img3
-]
+    Img3,]

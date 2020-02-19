@@ -14,8 +14,6 @@ const About2 = ({title, desc, year}) => {
         console.log(showSubContent)
     }
 
-    console.log(imgsArr)
-
     return(
             <section className='section-works'>
                 <div className='works-container'>
@@ -40,7 +38,9 @@ const About2 = ({title, desc, year}) => {
                     <article className={`works-sub-content-container ${showSubContent ? 'show-subs' : 'not-subs'}`}>
                         <div className={`works-sub-content ${showSubContent ? 'sub-cont-vis' : 'sub-cont-not'}`}>
                             <div className='works-sub-image-wrapper'>
-                                <img className='works-sub-image' src={imgsArr[1]} />
+                                <img className='works-sub-image image-left' src={imgsArr[0]} />
+                                <img className='works-sub-image image-center' src={imgsArr[1]} />
+                                <img className='works-sub-image image-right' src={imgsArr[2]} />
                             </div>
                             <div className='works-sub-content-description'>
                                 <div className='sub-content-desc desc-left'>
