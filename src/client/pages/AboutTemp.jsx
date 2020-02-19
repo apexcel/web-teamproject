@@ -1,8 +1,8 @@
 import React, { useState, useEffect, createRef } from 'react'
 
-import '../css/about.scss'
+import '../css/about-tem.scss'
 
-const About = ({isEmpty}) => {
+const AboutTemp = ({isEmpty}) => {
 
     const [active, setActive] = useState(true)
     const [hover, setHover] = useState()
@@ -75,4 +75,4 @@ const About = ({isEmpty}) => {
     )
 }
 
-export default About;
+export default AboutTemp;

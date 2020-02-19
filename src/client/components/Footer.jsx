@@ -1,8 +1,14 @@
 import React from 'react'
+import $ from 'jquery'
 
 import '../css/footer.scss'
 
-const Footer = () => {
+const Footer = (page) => {
+
+    const pageTop = () => {
+        window.scrollTo({top: 0, left:0, behavior: 'smooth'})
+    }
+
     return(
         <footer>
             <div className='footer-title'>
@@ -24,10 +30,10 @@ const Footer = () => {
                         <span>Gyeonggi-do, Republic of Korea</span>
                     </div>
                 </div>
-                <a href='#' className='footer-item right'>
+                <div onClick={pageTop} id='to-top' className='footer-item right'>
                     <div className='right-item'>
                     </div>
-                </a>
+                </div>
             </div>
         </footer>
     )

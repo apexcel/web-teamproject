@@ -10,6 +10,7 @@
 }
 
 html {
+    font-size: 100%;
     color: #000;
 }
 
@@ -33,7 +34,7 @@ $laptop-brp: 1024px;
         min-width: 320px;
         height: 100vh;
     }
-    
+
     // home
     .home-index {
         width: 300px;
@@ -60,6 +61,10 @@ $laptop-brp: 1024px;
     .item-selector {
         font-size: 2rem;
         padding: 10% 25% 10% 25%;
+    }
+
+    .works-container {
+        font-size: 62.5%;
     }
 }
 
@@ -124,10 +129,18 @@ $laptop-brp: 1024px;
     height: 100vh;
 }
 
+.abouts {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    align-items: center;
+
+}
+
 .section-container {
     height: 100%;
     padding: 2rem;
-    height: inherit;
 }
 
 .contents {

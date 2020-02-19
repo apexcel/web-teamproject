@@ -4,6 +4,13 @@
     align-items: center;
 }
 
+%pseudo-codes {
+    content: '';
+    position: absolute;
+    border-top: 1px solid #000;
+    border-left: 1px solid #000;
+}
+
 footer {
     position: absolute;
     background: #fff;
@@ -68,10 +75,25 @@ footer {
 
         .right {
             margin-left: auto;
+            cursor: pointer;
             @extend %flex-center-align;
 
             &:hover {
                 opacity: 0.5;
+            }
+
+            &::before {
+                @extend %pseudo-codes;
+                width: 15px;
+                height: 15px;
+                transform: rotate(45deg);
+            }
+            
+            &::after {
+                @extend %pseudo-codes;
+                width: 32px;
+                height: 32px;
+                transform: rotate(45deg);
             }
 
             .right-item {
@@ -81,26 +103,6 @@ footer {
                 height: 50px;
                 border-top: 1px solid black;
                 @extend %flex-center-align;
-
-                &::before {
-                    content: '';
-                    position: absolute;
-                    width: 15px;
-                    height: 15px;
-                    border-top: 1px solid #000;
-                    border-left: 1px solid #000;
-                    transform: rotate(45deg);
-                }
-                
-                &::after {
-                    content: '';
-                    position: absolute;
-                    width: 32px;
-                    height: 32px;
-                    border-top: 1px solid #000;
-                    border-left: 1px solid #000;
-                    transform: rotate(45deg);
-                }
             }
         }
     }

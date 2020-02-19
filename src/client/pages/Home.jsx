@@ -8,29 +8,29 @@ const Home = () => {
                 <div className='home-center'>
                     <div className='home-index'>
                         <div className='home-text'>
-                            <div className='bold'>D</div>
-                            <div className='bold'>B</div>
-                            <div className='bold'>N</div>
-                            <div className='bold'>E</div>
-                            <div className='bold'>T</div>
+                            <span className='bold'>D</span>
+                            <span className='bold'>B</span>
+                            <span className='bold'>N</span>
+                            <span className='bold'>E</span>
+                            <span className='bold'>T</span>
                         </div>
                         <div className='home-text'>
-                            <div className='small'>d</div>
-                            <div className='small'>a</div>
-                            <div className='small'>t</div>
-                            <div className='small'>a</div>
-                            <div className='small'>b</div>
-                            <div className='small'>a</div>
-                            <div className='small'>s</div>
-                            <div className='small'>e</div>
+                            <span className='small'>d</span>
+                            <span className='small'>a</span>
+                            <span className='small'>t</span>
+                            <span className='small'>a</span>
+                            <span className='small'>b</span>
+                            <span className='small'>a</span>
+                            <span className='small'>s</span>
+                            <span className='small'>e</span>
 
-                            <div className='small'>n</div>
-                            <div className='small'>e</div>
-                            <div className='small'>t</div>
-                            <div className='small'>w</div>
-                            <div className='small'>o</div>
-                            <div className='small'>r</div>
-                            <div className='small'>k</div>
+                            <span className='small'>n</span>
+                            <span className='small'>e</span>
+                            <span className='small'>t</span>
+                            <span className='small'>w</span>
+                            <span className='small'>o</span>
+                            <span className='small'>r</span>
+                            <span className='small'>k</span>
                         </div>
                     </div>
                 </div>

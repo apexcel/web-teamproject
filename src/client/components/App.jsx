@@ -1,21 +1,23 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, createRef } from 'react'
 import { Route, Switch } from 'react-router-dom'
+import $ from 'jquery'
 
 import Header from './Header.jsx'
 import MHeader from './MHeader.jsx'
 import Footer from './Footer.jsx'
-import { Home, About, Contact } from '../pages'
+import About from './About.jsx'
+import { Home } from '../pages'
 
 import '../css/layout.scss'
-import '../css/app.css'
+import '../css/app.scss'
 
 
 const App = () => {
     const [data, setData] = useState('')
     const [user, setUser] = useState([])
     const [lastUser, setLastUser] = useState('')
-    const [windowSize, setWindowSize] = useState();
-    const [itemShow, setItemShow] = useState(true);
+    const [windowSize, setWindowSize] = useState({width: window.innerWidth, height: window.innerHeight})
+    const [itemShow, setItemShow] = useState(true)
 
     useEffect ( () => {
         window.addEventListener('resize', resize)
@@ -30,6 +32,7 @@ const App = () => {
                 }
             }
         }
+        
         isShow()
 
         return () => {
@@ -38,14 +41,33 @@ const App = () => {
         }
     }, [windowSize])
 
+    useEffect(() => {
+        window.addEventListener('load',() => {
+            console.log('ready')
+            }, false);
+
+        // if ($(document).ready()) {
+        //     console.log('ready')
+        // }
+        // else {
+        //     console.log('not ready')
+        // }
+    })
+
     const resize = () => {
-        setWindowSize(window.innerWidth)
+        setWindowSize({
+            width: window.innerWidth,
+            height: window.innerHeight})
         console.log(windowSize)
-        console.log(typeof(Number(windowSize)))
+        console.log(windowSize.width)
     }
 
+
+
+
     const getWindowSize = () => ({
-        width: `${windowSize}`
+        width: windowSize.width,
+        height: windowSize.height
     })
 
     const isEmpty = (value) => { // 배열이나 객체가 비어 있으면 true, 값이 있으면 false
@@ -93,21 +115,12 @@ return(
         <div>
             {itemShow ? <Header /> : <MHeader />}
                 <div className='container' style={getWindowSize()}>
-                    {/* <h3>This is App Component</h3>
-                    <button onClick={() => {setLastUser(user.data)}}>getUser</button>
-                    {md}
-                    {data}
-                    <button onClick={getRoot}>getroot</button> }
-                    <Switch>
-                        <Route exact path='/' component={Home}/>
-                        <Route path='/about' component={About} />
-                        <Route path='/contact' />
-                    </Switch>
-                    */}
                     <Home />
-                    <About isEmpty={isEmpty} />
-                    <Contact />
-                    <Footer />
+                    <div className='abouts'>
+                        <About windowHeight={windowSize.height} title={'Web Development'} desc={'React Project'} year={'2020'} />
+                        <About title={'Test1'} desc={'test desc'} year={'2000'} />
+                    </div>
+                    <Footer/>
                 </div>
         </div>
     )
