@@ -1,7 +1,6 @@
 import React from 'react'
-import $ from 'jquery'
 
-import '../css/footer.scss'
+import '../styles/footer.scss'
 
 const Footer = (page) => {
 

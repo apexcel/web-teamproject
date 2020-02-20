@@ -1,10 +1,12 @@
 import React, { useState, useEffect, createRef } from 'react'
+import AwesomeSlider from 'react-awesome-slider'
+import AwesomeStyle from 'react-awesome-slider/src/styles'
 
-import '../css/about.scss'
+import '../styles/about.scss'
 
-import imgsArr from '../images'
+import ImgsArr from '../images'
 
-const About2 = ({title, desc, year}) => {
+const About = ({title, desc, year, descText}) => {
 
     const [showSubContent, setShowSubContent] = useState(false)
 
@@ -38,23 +40,15 @@ const About2 = ({title, desc, year}) => {
                     <article className={`works-sub-content-container ${showSubContent ? 'show-subs' : 'not-subs'}`}>
                         <div className={`works-sub-content ${showSubContent ? 'sub-cont-vis' : 'sub-cont-not'}`}>
                             <div className='works-sub-image-wrapper'>
-                                <img className='works-sub-image image-left' src={imgsArr[0]} />
-                                <img className='works-sub-image image-center' src={imgsArr[1]} />
-                                <img className='works-sub-image image-right' src={imgsArr[2]} />
+                                <AwesomeSlider bullets={false} cssModule={AwesomeStyle}>
+                                    <div data-src={ImgsArr[0]} />
+                                    <div data-src={ImgsArr[1]} />
+                                    <div data-src={ImgsArr[2]} />
+                                </AwesomeSlider>
                             </div>
                             <div className='works-sub-content-description'>
-                                <div className='sub-content-desc desc-left'>
-                                    BlahBlah1<br/>
-                                    BlahBlah2<br/>BlahBlah<br/>BlahBlah<br/>
-                                    BlahBlah3<br/>BlahBlah<br/>BlahBlah<br/>
-
-                                    BlahBlah4<br/>BlahBlah<br/>
-                                </div>
-                                <div className='sub-content-desc desc-right'>
-                                    BlahBlah<br/>BlahBlah<br/>
-                                    BlahBlah<br/>BlahBlah<br/>
-                                    BlahBlah<br/>BlahBlah<br/>
-                                    BlahBlah<br/>BlahBlah<br/>
+                                <div className='sub-content-desc'>
+                                    {descText}
                                 </div>
                             </div>
                         </div>
@@ -64,4 +58,4 @@ const About2 = ({title, desc, year}) => {
     )
 }
 
-export default About2;
+export default About;

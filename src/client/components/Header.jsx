@@ -1,6 +1,6 @@
 import React from 'react'
 
-import '../css/header.scss'
+import '../styles/header.scss'
 
 const Header = () => {
     
@@ -9,9 +9,9 @@ const Header = () => {
             <div className='header-wrapper'>
                 <h1 className='header-heading'><a  id='hw' className='header-title' href='/'>D</a></h1>
                 <div className='header-menu'>
-                    <a className='link' href='#about-container'>Works</a>
-                    <a className='link' href='#about-container'>About</a>
-                    <a className='link' href='#about-container'>Contact</a>
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </div>
             </div>
         </header>
