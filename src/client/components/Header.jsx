@@ -7,7 +7,7 @@ const Header = () => {
     return(
         <header className='header' role='banner'>
             <div className='header-wrapper'>
-                <h1 className='header-heading'><a  id='hw' className='header-title' href='/'>D</a></h1>
+                <h1 className='header-heading'><a className='header-title' href='/'>D</a></h1>
                 <div className='header-menu'>
                     <span></span>
                     <span></span>
