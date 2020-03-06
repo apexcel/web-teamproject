@@ -17,7 +17,7 @@ const Footer = (page) => {
 
                 <div className='footer-item left'>
                     <div className='left-item'>
-                        <a href='#' className='f-link'>WORKS</a>
+                        <a href='/' className='f-link'>WORKS</a>
                         <a href='#' className='f-link'>ABOUT</a>
                         <a href='#' className='f-link'>CONTACT</a>
                     </div>

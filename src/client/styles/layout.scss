@@ -28,6 +28,11 @@ a:any-link {
 $tablet-brp: 768px;
 $laptop-brp: 1024px;
 
+.unclickable * {
+    user-select: none;
+    display: none;
+}
+
 // Mobile
 @media only screen and (max-width: 768px) {
     .container {

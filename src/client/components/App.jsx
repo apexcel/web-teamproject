@@ -13,6 +13,7 @@ const App = () => {
 
     const [windowSize, setWindowSize] = useState({width: window.innerWidth, height: window.innerHeight})
     const [itemShow, setItemShow] = useState(true)
+    const [onClicked, setOnClicked] = useState(false)
 
     useEffect ( () => {
         window.addEventListener('resize', resize)
@@ -38,6 +39,11 @@ const App = () => {
 
     console.log(windowSize)
 
+    const isClicked = () => {
+        setOnClicked(!onClicked)
+        console.log(onClicked)
+    }
+
     const resize = () => {
         setWindowSize({
             width: window.innerWidth,
@@ -57,10 +63,10 @@ const App = () => {
 
 return(
         <div>
-            <Header />
+            <Header isClicked={isClicked} onClicked={onClicked}/>
                 <div className='container'>
                     <Home />
-                    <div className='abouts'>
+                    <div className={`abouts ${onClicked ? 'unclickable' : ''}`}>
                         <About 
                             title={'Web Development'} 
                             desc={'React Project'} 

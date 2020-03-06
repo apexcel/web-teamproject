@@ -8,15 +8,18 @@ $current-color: currentColor;
     }
 }
 
-.header {
+%header-setting {
     z-index: 999;
     display: block;
     position: fixed;
     width: 100%;
     overflow: hidden;
     padding: 3rem 0 3rem 0;
-    mix-blend-mode: difference;
     pointer-events: none;
+}
+
+.header {
+    @extend %header-setting;
 
     .header-wrapper {
         display: flex;
@@ -25,7 +28,7 @@ $current-color: currentColor;
         flex-direction: row;
         padding: 0 3rem 0 3rem;
         z-index: 1;
-    
+
         .header-heading {
             flex: none;
             font-family: 'Libre Baskerville', cursive;
@@ -35,7 +38,7 @@ $current-color: currentColor;
                 pointer-events: auto;
             }   
         }
-    
+
         .header-menu {
             position: relative;
             display: flex;
@@ -51,6 +54,10 @@ $current-color: currentColor;
             cursor: pointer;
             pointer-events: all;
         
+            &:hover {
+                opacity: .5;
+            }
+
             span {
                 position: absolute;
                 display: block;
@@ -70,4 +77,10 @@ $current-color: currentColor;
             }
         }
     }
+}
+
+.header-open {
+    @extend %header-setting;
+    height: 100%;
+    background: #000;
 }

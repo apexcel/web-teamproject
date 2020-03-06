@@ -1,14 +1,14 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 
 import '../styles/header.scss'
 
-const Header = () => {
-    
+const Header = ({isClicked, onClicked}) => {
+
     return(
-        <header className='header' role='banner'>
+        <header className={`${onClicked ? 'header-open' : 'header'}`} role='banner'>
             <div className='header-wrapper'>
                 <h1 className='header-heading'><a className='header-title' href='/'>D</a></h1>
-                <div className='header-menu'>
+                <div onClick={isClicked} className='header-menu'>
                     <span></span>
                     <span></span>
                     <span></span>
