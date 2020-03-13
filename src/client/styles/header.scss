@@ -8,7 +8,7 @@ $current-color: currentColor;
     }
 }
 
-%header-setting {
+%header-preset {
     z-index: 999;
     display: block;
     position: fixed;
@@ -18,16 +18,36 @@ $current-color: currentColor;
     pointer-events: none;
 }
 
+%header-wrapper-preset {
+    display: flex;
+    align-items: center;
+    position: relative;
+    flex-direction: row;
+    padding: 0 3rem 0 3rem;
+    z-index: 1;
+}
+
+%header-menu-preset {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    font-family: 'Open Sans', serif;
+    font-weight: lighter;
+    font-size: 1.2rem;
+    width: 4rem;
+    height: 4rem;
+    cursor: pointer;
+    pointer-events: all;
+}
+
 .header {
-    @extend %header-setting;
+    @extend %header-preset;
 
     .header-wrapper {
-        display: flex;
-        align-items: center;
-        position: relative;
-        flex-direction: row;
-        padding: 0 3rem 0 3rem;
-        z-index: 1;
+        @extend %header-wrapper-preset;
 
         .header-heading {
             flex: none;
@@ -40,25 +60,13 @@ $current-color: currentColor;
         }
 
         .header-menu {
-            position: relative;
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-            margin-left: auto;
-            font-family: 'Open Sans', serif;
-            font-weight: lighter;
-            font-size: 1.2rem;
-            width: 4rem;
-            height: 4rem;
-            cursor: pointer;
-            pointer-events: all;
+            @extend %header-menu-preset;
         
             &:hover {
                 opacity: .5;
             }
 
-            span {
+            .header-icon {
                 position: absolute;
                 display: block;
                 width: 100%;
@@ -80,7 +88,81 @@ $current-color: currentColor;
 }
 
 .header-open {
-    @extend %header-setting;
+    @extend %header-preset;
     height: 100%;
-    background: #000;
+    background: #000 !important;
+
+    & * {
+        color: #fff !important;
+    }
+
+    .header-wrapper-open {
+        @extend %header-wrapper-preset;
+
+        .header-heading-open {
+            flex: none;
+            font-family: 'Libre Baskerville', cursive !important;
+
+            .header-title {
+                font-size: 2.5rem;
+                pointer-events: auto;
+            }  
+        }
+
+        .header-menu-open {
+            @extend %header-menu-preset;
+        
+            &:hover {
+                opacity: .5;
+            }
+
+            .header-icon {
+                position: absolute;
+                display: block;
+                width: 100%;
+                height: 2px;
+                background-color: #fff;
+            
+                &:nth-child(1) {
+                    transform: rotate(45deg);
+                }
+            
+                &:nth-child(2) {
+                    display: none;
+                }
+
+                &:nth-child(3) {
+                    transform: rotate(-45deg);
+                }
+            }
+        }
+    }
+}
+
+.open-contents {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+
+    & div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    & a {
+        margin-top: 2rem;
+        font-size: 2rem;
+        pointer-events: all;
+
+        &:hover {
+            opacity: .5;
+            transition:  opacity 0.5s;
+        }
+    }
 }
