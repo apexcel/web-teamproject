@@ -155,10 +155,11 @@ $current-color: currentColor;
         align-items: center;
     }
 
-    & a {
+    & div * {
         margin-top: 2rem;
         font-size: 2rem;
         pointer-events: all;
+        cursor: pointer;
 
         &:hover {
             opacity: .5;

@@ -1,98 +1,44 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 
-import Header from './Header.jsx'
-import Footer from './Footer.jsx'
-import About from './About.jsx'
+import Works from './Works.jsx'
 import Home from './Home.jsx'
+import Footer from './Footer.jsx'
 
 import '../styles/layout.scss'
 import '../styles/app.scss'
 
+import ImgsArr from '../images'
 
-const App = () => {
-
-    const [windowSize, setWindowSize] = useState({width: window.innerWidth, height: window.innerHeight})
-    const [itemShow, setItemShow] = useState(true)
-    const [onClicked, setOnClicked] = useState(false)
-    const [hide, setHide] = useState({display: 'block'})
-
-    useEffect ( () => {
-        window.addEventListener('resize', resize)
-
-        const isShow = () => {
-            if (!isEmpty(windowSize)) {
-                if (windowSize > 769) {
-                    setItemShow(true)
-                }
-                else {
-                    setItemShow(false)
-                }
-            }
-        }
-        
-        isShow()
-
-        return () => {
-            console.log('clean')
-            window.removeEventListener('resize', resize)
-        }
-    }, [windowSize])
-
-
-    useEffect(() => {
-        if (onClicked) {
-            setHide({display: 'none'})
-        }
-        else {
-            setHide({display: 'block'})
-        }
-    }, [onClicked])
-
-    console.log(windowSize)
-
-    const isClicked = () => {
-        setOnClicked(!onClicked)
-        console.log(onClicked)
-    }
-
-    const resize = () => {
-        setWindowSize({
-            width: window.innerWidth,
-            height: window.innerHeight})
-        console.log(windowSize)
-        console.log(windowSize.width)
-    }
-
-    const isEmpty = (value) => { // 배열이나 객체가 비어 있으면 true, 값이 있으면 false
-        if (value === '' || value === null || value === undefined ||(value !== null && typeof value === 'object' && !Object.keys(value).length)) {
-            return true
-        }
-        else {
-            return false
-        }
-    }
+const App = ({hide, onClicked}) => {
 
 return(
         <div>
-            <Header isClicked={isClicked} onClicked={onClicked}/>
-                <div className='container' style={hide}>
-                    <Home />
-                    <div className={`abouts ${onClicked ? 'unclickable' : ''}`}>
-                        <About 
-                            title={'Web Development'} 
-                            desc={'React Project'} 
-                            year={'2020'} 
-                            descText={
-                                `React, Webpack, Babel 및 기타 라이브러리를 사용하여 제작.`
-                                    }/>
-                        <About 
-                            title={'Test1'} 
-                            desc={'test desc'} 
-                            year={'2000'} 
-                            descText={`테스트요ㅕㅇ`}/>
-                    </div>
-                    <Footer/>
+            <div className='container' style={hide}>
+                <Home />
+                <div className={`works ${onClicked ? 'unclickable' : ''}`}>
+                    <Works 
+                        title={'Web Development'} 
+                        desc={'React Project'} 
+                        year={'2020'}
+                        imgs={ImgsArr}
+                        descText={
+                            `React, Webpack, Babel 및 기타 라이브러리를 사용하여 제작.`
+                                }/>
+                    <Works 
+                        title={'Lab Study'} 
+                        desc={'Study with the Lab members'} 
+                        year={'2019'} 
+                        imgs={ImgsArr}
+                        descText={`랩 지도 교수님 및 구성원이 모여 회의 및 스터디`}/>
+                    <Works 
+                        title={'MT'} 
+                        desc={'Membership Training'} 
+                        year={'2019'} 
+                        imgs={ImgsArr}
+                        descText={`랩 구성원들의 유대 증진을 위한 MT 활동`}/>
                 </div>
+                <Footer />
+            </div>
         </div>
     )
 }

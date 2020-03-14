@@ -28,7 +28,7 @@ a:any-link {
 $tablet-brp: 768px;
 $laptop-brp: 1024px;
 
-.unclickable * {
+.unclickable {
     user-select: none;
     display: none;
 }
@@ -166,7 +166,7 @@ $laptop-brp: 1024px;
     height: 100vh;
 }
 
-.abouts {
+.works {
     position: relative;
     display: flex;
     flex-direction: column;

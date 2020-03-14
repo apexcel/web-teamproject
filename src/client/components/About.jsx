@@ -1,60 +1,26 @@
-import React, { useState, useEffect, createRef } from 'react'
-import AwesomeSlider from 'react-awesome-slider'
-import AwesomeStyle from 'react-awesome-slider/src/styles'
+import React from 'react'
 
+import Footer from './Footer.jsx'
+
+//styles
 import '../styles/about.scss'
 
-import ImgsArr from '../images'
-
-const About = ({title, desc, year, descText}) => {
-
-    const [showSubContent, setShowSubContent] = useState(false)
-
-
-    const isShowSubContent = () => {
-        setShowSubContent(!showSubContent)
-        console.log(showSubContent)
-    }
-
+const About = () => {
     return(
-            <section className='section-works'>
-                <div className='works-container'>
-                    <header onClick={isShowSubContent} className='works-header-container'>
-                        <div className='works-header-icon'></div>
-                        <div className='works-heading'>
-                            <h1 className='works-header-title'>
-                                {title}
-                            </h1>
-                        </div>
-                        <div className='works-header-description'>
-                            <span>
-                                {desc}
-                            </span>
-                        </div>
-                        <div className='works-header-year'>
-                            <span>
-                                {year}
-                            </span>
-                        </div>
-                    </header>
-                    <article className={`works-sub-content-container ${showSubContent ? 'show-subs' : 'not-subs'}`}>
-                        <div className={`works-sub-content ${showSubContent ? 'sub-cont-vis' : 'sub-cont-not'}`}>
-                            <div className='works-sub-image-wrapper'>
-                                <AwesomeSlider bullets={false} cssModule={AwesomeStyle}>
-                                    <div data-src={ImgsArr[0]} />
-                                    <div data-src={ImgsArr[1]} />
-                                    <div data-src={ImgsArr[2]} />
-                                </AwesomeSlider>
-                            </div>
-                            <div className='works-sub-content-description'>
-                                <div className='sub-content-desc'>
-                                    {descText}
-                                </div>
-                            </div>
-                        </div>
-                    </article>
+        <div>
+            <div className='about-container'>
+                <div>
+                    <div className='title-heading'>DBNET</div>
+                    <div className='title'>About</div>
+                    <hr/>
                 </div>
-            </section>
+                <article className='about-article'>
+                    DBNET은 한신대학교 컴퓨터 공학과의 연구실로서 데이터베이스와 네트워크의 합성어로 이루어진 단어입니다.
+                    
+                </article>
+            </div>
+            <Footer />
+        </div>
     )
 }
 
