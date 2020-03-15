@@ -2,7 +2,7 @@ const webpack = require('webpack')
 const path = require('path')
 const HtmlWebPackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
-
+const UglifyWebpackPlugin = require('uglifyjs-webpack-plugin')
 
 module.exports = {
     mode: 'development',
@@ -60,6 +60,7 @@ module.exports = {
         }),
 
         new CleanWebpackPlugin(),
+        new UglifyWebpackPlugin(),
     ],
 
     optimization: {
