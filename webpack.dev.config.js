@@ -41,7 +41,7 @@ module.exports = {
                 loader: 'file-loader',
                 exclude: /node_modules/,
                 options: {
-                    publicPath: '/src/client/images/',
+                    publicPath: '/imgs/',
                     outputPath: '/dist/',
                     name: '[name].[ext]?[hash]'
                 }

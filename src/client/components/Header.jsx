@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 import { Route, Switch, Link} from 'react-router-dom'
 
 import '../styles/header.scss'
-import App from './App.jsx'
 
 const Header = ({isClicked, onClicked}) => {
 
@@ -18,7 +17,7 @@ const Header = ({isClicked, onClicked}) => {
             </div>
             {onClicked ? <div className='open-contents'>
                 <div>
-                    <Link onClick={isClicked} to='/wvProject'>Works</Link>
+                    <Link onClick={isClicked} to='/wvProject/'>Works</Link>
                     <Link onClick={isClicked} to='/wvProject/about'>About</Link>
                     <Link onClick={isClicked} to='/wvProject/contact'>Contact</Link>
                 </div>
