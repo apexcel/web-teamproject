@@ -18,9 +18,9 @@ const Footer = (page) => {
 
                 <div className='footer-item left'>
                     <div className='left-item'>
-                        <Link className='f-link' onClick={isClicked} to='/wvProject/'>Works</Link>
-                        <Link className='f-link' onClick={isClicked} to='/wvProject/about'>About</Link>
-                        <Link className='f-link' onClick={isClicked} to='/wvProject/contact'>Contact</Link>
+                        <Link className='f-link' to='/wvProject/'>Works</Link>
+                        <Link className='f-link' to='/wvProject/about'>About</Link>
+                        <Link className='f-link' to='/wvProject/contact'>Contact</Link>
                     </div>
                 </div>
                 <div className='footer-item mid'>
