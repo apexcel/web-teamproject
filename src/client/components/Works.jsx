@@ -39,9 +39,9 @@ const Works = ({title, desc, year, imgs, descText}) => {
                         <div className={`works-sub-content ${showSubContent ? 'sub-cont-vis' : 'sub-cont-not'}`}>
                             <div className='works-sub-image-wrapper'>
                                 <AwesomeSlider bullets={false} cssModule={AwesomeStyle}>
-                                    <div data-src={imgs[3]} />
-                                    <div data-src={imgs[4]} />
-                                    <div data-src={imgs[5]} />
+                                    <div data-src={imgs[0]} />
+                                    <div data-src={imgs[1]} />
+                                    <div data-src={imgs[2]} />
                                 </AwesomeSlider>
                             </div>
                             <div className='works-sub-content-description'>

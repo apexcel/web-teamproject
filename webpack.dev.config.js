@@ -11,7 +11,7 @@ module.exports = {
     },
     output: {
         filename: '[name].js',
-        path: path.resolve('./dist')
+        path: path.resolve('./build')
     },
     devServer: {
         overlay: true,
@@ -41,8 +41,8 @@ module.exports = {
                 loader: 'file-loader',
                 exclude: /node_modules/,
                 options: {
-                    publicPath: '/imgs/',
-                    outputPath: '/dist/',
+                    publicPath: '/src/client/images',
+                    outputPath: '/imgs/',
                     name: '[name].[ext]?[hash]'
                 }
             }

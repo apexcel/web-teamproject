@@ -20,7 +20,7 @@ return(
                         title={'Web Development'} 
                         desc={'React Project'} 
                         year={'2020'}
-                        imgs={ImgsArr}
+                        imgs={ImgsArr[0], ImgsArr[1]. ImgsArr[2]}
                         descText={
                             `React, Webpack, Babel 및 기타 라이브러리를 사용하여 제작.`
                                 }/>

@@ -11,7 +11,7 @@ module.exports = {
     },
     output: {
         filename: '[name].js',
-        path: path.resolve('./dist')
+        path: path.resolve('./build'),
     },
 
     module: {
@@ -30,13 +30,13 @@ module.exports = {
                 use: 'html-loader'
             },
             {
-                test: /\.(png|jpg|svg|gif|eot|otf|ttf|woff)$/,
+                test: /\.(png|jpg|svg|gif)$/,
                 loader: 'file-loader',
                 exclude: /node_modules/,
                 options: {
-                    publicPath: '/src/client/images/',
-                    outputPath: '/imgs/',
-                    name: '[name].[ext]?[hash]'
+                    publicPath: 'imgs/',
+                    outputPath: 'imgs/',
+                    name: '[name].[ext]'
                 }
             }
         ]
