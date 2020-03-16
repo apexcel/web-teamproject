@@ -100,7 +100,7 @@ const Root = () => {
             <Header isClicked={isClicked} onClicked={onClicked} />
                 <Switch>
                     <Route 
-                        exact path='/wvProject' 
+                        exact path='/wvProject/' 
                         component={App} 
                         hide={hide} 
                         onClicked={onClicked}
