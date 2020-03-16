@@ -100,13 +100,13 @@ const Root = () => {
             <Header isClicked={isClicked} onClicked={onClicked} />
                 <Switch>
                     <Route 
-                        exact path='/' 
+                        exact path='/wvProject' 
                         component={App} 
                         hide={hide} 
                         onClicked={onClicked}
                         />
-                    <Route path='/about' component={About} />
-                    <Route path='/contact' component={Contact} />
+                    <Route path='/wvProject/about' component={About} />
+                    <Route path='/wvProject/contact' component={Contact} />
                 </Switch>
         </BrowserRouter>
     )

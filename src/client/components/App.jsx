@@ -7,7 +7,7 @@ import Footer from './Footer.jsx'
 import '../styles/layout.scss'
 import '../styles/app.scss'
 
-import ImgsArr from '../images'
+import ImgsArr from '../images/images'
 
 const App = ({hide, onClicked}) => {
 

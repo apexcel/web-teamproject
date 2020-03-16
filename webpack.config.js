@@ -2,7 +2,7 @@ const webpack = require('webpack')
 const path = require('path')
 const HtmlWebPackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
-
+const UglifyWebpackPlugin = require('uglifyjs-webpack-plugin')
 
 module.exports = {
     mode: 'production',
@@ -34,8 +34,8 @@ module.exports = {
                 loader: 'file-loader',
                 exclude: /node_modules/,
                 options: {
-                    publicPath: '/src/client/images/',
-                    outputPath: '/dist/',
+                    publicPath: '/imgs/',
+                    outputPath: '/imgs/',
                     name: '[name].[ext]?[hash]'
                 }
             }
@@ -52,6 +52,7 @@ module.exports = {
         }),
 
         new CleanWebpackPlugin(),
+        new UglifyWebpackPlugin(),
     ],
 
     optimization: {
