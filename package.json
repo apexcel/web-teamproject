@@ -1,9 +1,9 @@
 {
-  "name": "wvProject",
+  "name": "web-teamproject",
   "version": "1.0.0",
   "description": "Winter vacation project",
   "main": "index.js",
-  "homepage": "https://oogie826.github.io/wvProject",
+  "homepage": "https://oogie826.github.io/web-teamproject",
   "scripts": {
     "start": "webpack-dev-server --open --config ./webpack.config.js",
     "dev": "webpack-dev-server --open --config ./webpack.dev.config.js",
