@@ -18,9 +18,9 @@ const Footer = () => {
 
                 <div className='footer-item left'>
                     <div className='left-item'>
-                        <Link className='f-link' to='/wvProject/'>Works</Link>
-                        <Link className='f-link' to='/wvProject/about'>About</Link>
-                        <Link className='f-link' to='/wvProject/contact'>Contact</Link>
+                        <Link className='f-link' to='/web-teamproject/'>Works</Link>
+                        <Link className='f-link' to='/web-teamproject/about'>About</Link>
+                        <Link className='f-link' to='/web-teamproject/contact'>Contact</Link>
                     </div>
                 </div>
                 <div className='footer-item mid'>

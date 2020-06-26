@@ -17,9 +17,9 @@ const Header = ({isClicked, onClicked}) => {
             </div>
             {onClicked ? <div className='open-contents'>
                 <div>
-                    <Link onClick={isClicked} to='/wvProject/'>Works</Link>
-                    <Link onClick={isClicked} to='/wvProject/about'>About</Link>
-                    <Link onClick={isClicked} to='/wvProject/contact'>Contact</Link>
+                    <Link onClick={isClicked} to='/web-teamproject/'>Works</Link>
+                    <Link onClick={isClicked} to='/web-teamproject/about'>About</Link>
+                    <Link onClick={isClicked} to='/web-teamproject/contact'>Contact</Link>
                 </div>
             </div> : <div></div>}
         </header>
